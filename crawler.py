@@ -2,9 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+import json
 
-instagram_id = "ch.ium"
-instagram_pw = "1q2w3e4r!"
+with open('admin.json') as json_file:
+    admin = json.load(json_file)
+
+instagram_id = admin["id"]
+instagram_pw = admin["pw"]
 
 followers = []
 following = []
